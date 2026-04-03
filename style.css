@@ -1,0 +1,152 @@
+:root {
+    --bg: #0f172a;
+    --card: rgba(30, 41, 59, 0.6);
+    --primary: #1e3a8a;
+    --accent: #3b82f6;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: var(--text);
+    height: 100vh;
+}
+
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.card {
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 16px;
+    width: 350px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    animation: fadeIn 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #1e293b;
+    color: white;
+}
+
+input::placeholder {
+    color: var(--muted);
+}
+
+
+button {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    border: none;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: rgba(30, 41, 59, 0.8);
+}
+
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.completed span {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+
+.delete {
+    color: var(--danger);
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.delete:hover {
+    transform: scale(1.2);
+}
+
+
+#emptyState {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 400px) {
+    .card {
+        width: 90%;
+    }
+}
